@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth-card">
+  <h1>Cashier Dashboard</h1>
+  <p class="subtitle">Welcome, {{ user.first_name|default:user.username }}!</p>
+</div>
+{% endblock %}
