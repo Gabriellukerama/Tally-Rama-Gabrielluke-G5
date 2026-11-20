@@ -1,7 +1,22 @@
 {% extends "base.html" %}
+{% block title %}Cashier Dashboard - Tally{% endblock %}
+
 {% block content %}
-<div class="auth-card">
-  <h1>Cashier Dashboard</h1>
-  <p class="subtitle">Welcome, {{ user.first_name|default:user.username }}!</p>
+<div class="dash">
+  <h1>Welcome, {{ user.first_name|default:user.username }}!</h1>
+  <p class="subtitle">Cashier dashboard</p>
+
+  <div class="stats">
+    <div class="stat"><strong>{{ user.get_role_display }}</strong><span>Role</span></div>
+    <div class="stat"><strong>{{ user.last_login|date:"M d, Y" }}</strong><span>Last login</span></div>
+  </div>
+
+  <div class="panel">
+    <h2>Coming soon</h2>
+    <ul>
+      <li>Sales register and change calculator</li>
+      <li>Recent transactions</li>
+    </ul>
+  </div>
 </div>
 {% endblock %}

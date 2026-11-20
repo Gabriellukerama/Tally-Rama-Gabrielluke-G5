@@ -18,6 +18,10 @@ class OwnerDashboardView(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
     def test_func(self):
         return self.request.user.role == CustomUser.Role.OWNER
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["member_count"] = CustomUser.objects.count()
+        return context
 
 class CashierDashboardView(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
     template_name = "dashboard/cashier.html"

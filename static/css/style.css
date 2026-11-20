@@ -89,3 +89,16 @@ main { padding: 2rem 1rem; }
 
 .switch { text-align: center; margin: 1.2rem 0 0; color: var(--muted); }
 .switch a { color: var(--green-600); font-weight: 600; }
+
+.alert.success { background: #dcfce7; color: #14532d; }
+.messages { max-width: 720px; margin: 1rem auto 0; padding: 0 1rem; }
+
+.dash { max-width: 720px; margin: 0 auto; }
+.dash h1 { margin: 0; color: var(--green-900); }
+.dash .subtitle { margin: 0.2rem 0 1.5rem; color: var(--muted); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.stat { background: #fff; border-radius: 12px; padding: 1.2rem; text-align: center; box-shadow: 0 4px 14px rgba(20, 83, 45, 0.1); }
+.stat strong { display: block; font-size: 1.4rem; color: var(--green-600); }
+.stat span { color: var(--muted); font-size: 0.85rem; }
+.panel { background: #fff; border-radius: 12px; padding: 1.2rem 1.5rem; box-shadow: 0 4px 14px rgba(20, 83, 45, 0.1); }
+.panel h2 { margin-top: 0; font-size: 1.1rem; }
