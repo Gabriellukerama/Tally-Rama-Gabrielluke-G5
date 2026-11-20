@@ -18,3 +18,16 @@ class CustomUserCreationForm(UserCreationForm):
         if CustomUser.objects.filter(email__iexact=email).exists():
             raise forms.ValidationError("This email is already registered.")
         return email
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = CustomUser
+        fields = ("first_name", "last_name", "email",
+                  "contact_number", "profile_photo")
+        widgets = {"profile_photo": forms.FileInput}
+
+    def clean_email(self):
+        email = self.cleaned_data["email"].strip().lower()
+        if CustomUser.objects.filter(email__iexact=email).exclude(pk=self.instance.pk).exists():
+            raise forms.ValidationError("This email is already used by another account.")
+        return email
