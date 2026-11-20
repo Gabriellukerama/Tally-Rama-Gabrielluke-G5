@@ -11,7 +11,7 @@
   <nav class="navbar">
     <a class="brand" href="/">Tally</a>
     {% if user.is_authenticated %}
-      <span>Hi, {{ user.username }}!</span>
+      <a href="{% url 'product_list' %}">Products</a>
       <a href="{% url 'profile' %}">Profile</a>
       <form method="post" action="{% url 'logout' %}">
         {% csrf_token %}

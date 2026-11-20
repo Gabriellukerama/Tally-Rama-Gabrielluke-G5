@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Categories - Tally{% endblock %}
+
+{% block content %}
+<div class="page">
+  <div class="page-head">
+    <h1>Categories</h1>
+    <div class="head-actions">
+      <a class="btn-link" href="{% url 'product_list' %}">Products</a>
+      <a class="btn-link primary" href="{% url 'category_add' %}">+ Add category</a>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table class="table">
+      <thead><tr><th>Name</th><th>Products</th><th></th></tr></thead>
+      <tbody>
+      {% for c in categories %}
+        <tr>
+          <td>{{ c.name }}</td>
+          <td>{{ c.num_products }}</td>
+          <td class="actions">
+            <a href="{% url 'category_edit' c.pk %}">Edit</a>
+            <a class="danger" href="{% url 'category_delete' c.pk %}">Delete</a>
+          </td>
+        </tr>
+      {% empty %}
+        <tr><td colspan="3" class="empty">No categories yet. Add one first, such as Food or Drinks.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
