@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Access denied - Tally{% endblock %}
+{% block content %}
+<div class="auth-card">
+  <h1>Access denied</h1>
+  <p class="subtitle">Your role does not have permission to open this page.</p>
+  <a class="btn-link primary" href="{% url 'dashboard' %}">Back to dashboard</a>
+</div>
+{% endblock %}
