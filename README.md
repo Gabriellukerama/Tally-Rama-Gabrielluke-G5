@@ -65,7 +65,7 @@ Django (templates), PostgreSQL via Supabase, Python 3, python-dotenv, Pillow.
 | Role | Username | Password |
 |---|---|---|
 | Owner | admin123 | admin123 |
-| Cashier | lukerama123 | Cashier123! |
+| Cashier | lukerama123 | Gabz09423450324 |
 
 ## Branching
 
@@ -74,3 +74,9 @@ Django (templates), PostgreSQL via Supabase, Python 3, python-dotenv, Pillow.
 ## Roadmap
 
 Sales register with automatic totals and change calculation, transaction history, sales summary, and offline operation.
+
+## Running Tests
+
+    python manage.py test --keepdb
+
+`--keepdb` reuses the temporary test database and avoids a cleanup error from Supabase's connection pooler.
